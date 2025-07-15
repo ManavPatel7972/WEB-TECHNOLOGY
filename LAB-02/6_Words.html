@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <button onclick="convertNumber()">Enter Number</button>
+    <p id="result"></p>
+
+    <script>
+      function convertNumber() {
+        let input = prompt("Enter a number between 0 and 999:");
+        let resultBox = document.getElementById("result");
+
+        if (isNaN(input)) {
+          resultBox.innerText = "Not a number";
+          return;
+        }
+
+        let number = parseInt(input);
+
+        if (number < 0 || number > 999) {
+          resultBox.innerText = "Out of range";
+          return;
+        }
+
+        resultBox.innerText = numberToWords(number);
+      }
+
+      function numberToWords(num) {
+        const ones = [
+          "zero",
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+          "six",
+          "seven",
+          "eight",
+          "nine",
+        ];
+        const teens = [
+          "ten",
+          "eleven",
+          "twelve",
+          "thirteen",
+          "fourteen",
+          "fifteen",
+          "sixteen",
+          "seventeen",
+          "eighteen",
+          "nineteen",
+        ];
+        const tens = [
+          "",
+          "",
+          "twenty",
+          "thirty",
+          "forty",
+          "fifty",
+          "sixty",
+          "seventy",
+          "eighty",
+          "ninety",
+        ];
+
+        let words = "";
+
+        if (num === 0) return "zero";
+
+        if (Math.floor(num / 100) > 0) {
+          words += ones[Math.floor(num / 100)] + " hundred";
+          num = num % 100;
+          if (num > 0) {
+            words += " and ";
+          }
+        }
+
+        if (num >= 10 && num < 20) {
+          words += teens[num - 10];
+        } else if (num >= 20) {
+          words += tens[Math.floor(num / 10)];
+          if (num % 10 > 0) {
+            words += "-" + ones[num % 10];
+          }
+        } else if (num > 0) {
+          words += ones[num];
+        }
+
+        return words;
+      }
+    </script>
+  </body>
+</html>

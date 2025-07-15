@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        function isPrime(n) {
+          if (n == 0 || n == 1) {
+            document.write("Not a Prime Number In the range");
+            return 0;
+          }
+          // document.write(n + "  ");
+          for (i = 2; i<=Math.sqrt(n); i++) {
+            if (n % i == 0) {
+              return 0;
+            }
+          }
+          return 1;
+        }
+
+      s = prompt("Enter a Start Number:");
+      e = prompt("Enter a End Number:");
+
+      for (i = s; i <= e; i++) {
+        for (j = 2; j < Math.sqrt(s); j++) {
+          if (i % j != 0) {
+            document.write(i + " ");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
