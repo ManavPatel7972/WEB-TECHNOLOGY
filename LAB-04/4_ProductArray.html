@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+<body>
+  <script>
+    products = [
+            {
+                id: 1,
+                name: 'Laptop',
+                description: 'A high performance laptop',
+                price: 1200,
+                category: 'Electronics',
+                inStock: true
+            },
+            {
+                id: 2,
+                name: 'Smartphone',
+                description: 'Latest model smartphone with advanced features',
+                price: 800,
+                category: 'Electronics',
+                inStock: true
+            },
+            {
+                id: 3,
+                name: 'Desk Chair',
+                description: 'Ergonomic desk chair for comfortable seating',
+                price: 150,
+                category: 'Furniture',
+                inStock: false
+            },
+            {
+                id: 4,
+                name: 'Book',
+                description: 'A popular science fiction novel',
+                price: 20,
+                category: 'Books',
+                inStock: true
+            },
+            {
+                id: 5,
+                name: 'Headphones',
+                description: 'Noise-cancelling over-ear headphones',
+                price: 200,
+                category: 'Electronics',
+                inStock: true
+            }
+        ];
+
+        document.write("<table class='table'>")
+      document.write("<thead>")
+        document.write("<tr>")
+        document.write("<th scope='col'>id:</th>")
+        document.write("<th scope='col'>name:</th>")
+        document.write("<th scope='col'>description:</th>")
+        document.write("<th scope='col'>price:</th>")
+        document.write("<th scope='col'>category:</th>")
+        document.write("<th scope='col'>inStock:</th>")
+      document.write("</tr>")
+      document.write("</thead>")
+      document.write("<tbody>")
+
+        for(i=0;i<products.length;i++) {
+          document.write("<tr>")
+          document.write("<td>"+ products[i].id + "</td>")
+          document.write("<td>"+ products[i].name + "</td>")
+          document.write("<td>"+ products[i].description + "</td>")
+          document.write("<td>"+ products[i].price + "</td>")
+          document.write("<td>"+ products[i].category + "</td>")
+          document.write("<td>"+ products[i].inStock + "</td>")
+          document.write("</tr>")  
+        }
+    
+  document.write("</tbody>")
+document.write("</table>")
+  </script>
+</body>
+</html>
