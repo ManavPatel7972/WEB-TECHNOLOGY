@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB-1</title>
+</head>
+<body>
+    <script>
+        a = Number(prompt("Enter a Number 1:"));
+        b = parseInt(prompt("Enter a Number 2:"));
+        op = prompt("Enter a operation : +,-,*,/");
+
+        if(op == "+"){
+            document.write("Addition = " + (a+b));
+        }
+        else if(op == "-"){
+             document.write("Subtraction = " + (a-b));
+        }
+        else if(op == "*"){
+             document.write("Multipication = " + (a*b));
+        }
+        else if(op == "/"){
+            if(b == 0){
+                alert("Divide by 0 is not posible");
+            }
+            else{
+                document.write("Division = " + (a/b));
+            }
+        }
+        else{
+            document.write("Invalid Ans");
+        }
+        
+    </script>
+    
+</body>
+</html>

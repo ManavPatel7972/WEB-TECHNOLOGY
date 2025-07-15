@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LAB-1</title>
+  </head>
+  <body>
+    <script>
+      n = parseInt(prompt("Enter a Number "));
+      ori = n;
+      count = 0;
+      sum = 0;
+      ori2 = n;
+
+      function digit(n) {
+        while (n > 0) {
+          count++;
+          n = parseInt(n / 10);
+        }
+        return count;
+      }
+      document.writeln(digit(n));
+    
+
+      while (ori != 0) {
+        ld = ori % 10;
+        sum = sum + Math.pow(ld, digit(ori2));
+        ori = parseInt(ori / 10);
+      }
+
+      document.writeln(sum);
+
+      if (ori2 == sum) {
+        document.write("Number is Armstrong");
+      } else {
+        document.write("Number is not Armstrong");
+      }
+    </script>
+  </body>
+</html>
