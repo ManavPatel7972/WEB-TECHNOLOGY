@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5A2</title>
+</head>
+<body>
+  <div>
+    <form id="myform">
+      <h3 >first name : <input type="text" id='name'placeholder="enter the firstname"></h3>
+    
+      <h3> Email :  <input type="email" id='email'placeholder="enter valid emailId"></h3>
+
+      <button type="button" class="btn btn-dark" onclick="submitform()" >submit</button>
+    </form>
+      <script type="text/javascript">
+        function submitform(){
+          var name = document.getElementById('name').value;
+          var last = document.getElementById('email').value;
+
+          if(name==""||last==""){
+            alert("enter the name and email name");
+          }
+        }
+
+        document.write.getElementById(myform);
+      </script>
+</body>
+</html>
