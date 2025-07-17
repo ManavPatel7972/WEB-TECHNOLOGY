@@ -1,0 +1,28 @@
+<!-- 5. WAP to demonstrate change in properties of HTML element using JavaScript. (A) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="mypera">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat accusantium molestias aliquid quod minus debitis dolorem, deleniti inventore dolor possimus? Voluptates minima neque dolor qui? Odio corrupti dolores non eos.</p>
+
+</br>
+
+    <input id="myinput"/>
+
+
+    <script>
+        peraRef = document.getElementById("mypera");
+        peraRef.style.color = "red";
+
+        inputRef = document.getElementById("myinput");
+        inputRef.setAttribute("type","number");
+        inputRef.style.border = '1px solid red';
+
+    </script>
+</body>
+</html>

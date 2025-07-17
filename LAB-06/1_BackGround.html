@@ -1,0 +1,24 @@
+<!-- //1. WAP to change background color on click of button. (A) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="mypera">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis tenetur modi a tempore repellat ut veniam fuga incidunt maiores minima ipsam expedita, ex repellendus? Libero quibusdam aperiam ipsam numquam corporis?</p>
+
+    <button onclick="changeBackground()">Click</button>
+
+    <script>
+        function changeBackground(){
+           peraRef = document.getElementById("mypera");
+           peraRef.style.backgroundColor = "green";
+           peraRef.style.color = "yellow"; 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!-- 7. WAP to perform CRUD operation on Array using HTML and JavaScript. (C) -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin-top: 1%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <label for="">username : </label>
+    <input type="text" id="username">
+    <button onclick="addstudent()" id="addBtn">ADD</button>
+    <table border="2px">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>Action</th>
+        </tr>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <script>
+        array = [];
+
+        exIdx = -1;
+
+        function addstudent() {
+            let val2 = document.getElementById('username').value;
+            if (exIdx != -1) {
+                array[exIdx] = val2;
+                exIdx = -1;
+                document.getElementById("addBtn").innerHTML = "ADD";
+            }
+            else {
+                array.push(val2);
+            }
+             document.getElementById('username').value =  " ";
+            display();
+        }
+
+        function display() {
+
+            temp = "";
+            let val1 = document.getElementById('tableBody');
+            for (i = 0; i < array.length; i++) {
+                temp += `
+                <tr>
+                    <td>${i + 1}</td>
+                    <td>${array[i]}</td>
+                    <td>
+                        <button onclick="editStudent(${i})">Edit</button>
+                        <button onclick="deleteStudent(${i})">Delete</button>
+                        
+                    </td>
+                </tr> 
+                `;
+            }
+
+            val1.innerHTML = temp;
+        }
+
+        function deleteStudent(i) {
+            array.splice(i, 1);
+            display();
+        }
+
+        function editStudent(i) {
+            document.getElementById("username").value = array[i];
+            exIdx=i;
+            document.getElementById("addBtn").innerText="UPDATE";
+        }
+    </script>
+</body>
+
+</html>
