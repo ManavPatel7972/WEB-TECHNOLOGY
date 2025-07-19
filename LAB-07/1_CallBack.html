@@ -1,0 +1,28 @@
+<!-- //1. WAP to demonstrate callbacks in JavaScript. (A -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <script>
+
+        function sum(a,b,mycallback){
+            res = a+b;
+            mycallback(res);
+
+        }
+
+        function printSum(ans){
+            console.log("Sum = ", ans);
+        }
+
+        sum(10,20,printSum);
+
+    </script>
+</body>
+</html>

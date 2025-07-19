@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arr_Object_Destructing</title>
+  </head>
+  <body>
+    <script>
+      user = {
+        name: "Manav",
+        age: 19,
+        sem: 3,
+        address: "rajkot",
+        spi: 9.33
+      };
+
+      let { name, sem, spi, ...other } = user;
+
+      console.log(name);
+      console.log(sem);
+      console.log(spi);
+
+      console.log(other);
+
+      arr = [10, 20, 30, 40, 50, 60];
+
+      let [a, b, c, ...other2] = arr;
+
+      console.log(a);
+      console.log(b);
+      console.log(c);
+
+      console.log(other2);
+
+
+    </script>
+  </body>
+</html>
