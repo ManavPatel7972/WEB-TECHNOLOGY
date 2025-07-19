@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta namee="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance System</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container-flixed">
+      <div class="container">
+        <div class="title">
+          <p class="h3 mt-3 text-center bg-primary-subtle">
+            Student Attendance Tracker
+          </p>
+        </div>
+
+        <!-- <i class="bi bi-check bg-success text-white" id="icon"></i> -->
+        <!-- <i class="fa-solid fa-xmark bg-danger fs-5" id="cancle"></i> -->
+
+        <div class="buttons d-flex justify-content-center p-2 mt-4">
+          <button
+            class="me-5 btn btn-success"
+            onclick="allPresent(),presentaALLIconSet(stuDetails)"
+          >
+            PresentAll
+            <i class="bi bi-check bg-success text-white d-none" id="icon"></i>
+          </button>
+          <button
+            class="me-5 btn btn-danger"
+            onclick="allAbsent() , absentAllIconSet(stuDetails)"
+          >
+            AbsentAll
+            <i class="fa-solid fa-xmark bg-danger fs-5 d-none" id="cancle"></i>
+          </button>
+          <button class="me-5 btn btn-warning" onclick="resetAttendance(),
+          removeAllIcon(stuDetails)">
+            Reset
+          </button>
+          <button class="me-5 btn btn-danger" onclick="saveAttendance(),
+          removeAllIcon(stuDetails)">
+            Save Attendance
+          </button>
+        </div>
+
+        <div class="mt-4 text-center d-flex flex-column align-items-center">
+          <p class="border w-auto fs-5 p-2" id="mypresentRes"></p>
+          <p class="border w-auto fs-5 p-2" id="myabsentRes"></p>
+        </div>
+
+        <div class="listStu mt-1">
+          <tbody id="tbodyRef"></tbody>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      
+      stuDetails = [
+        { roll: 101, name: "Manav" },
+        { roll: 102, name: "Jal" },
+        { roll: 103, name: "Deep" },
+        { roll: 104, name: "Jenil" },
+        { roll: 105, name: "Dhaval" },
+        { roll: 106, name: "Harsh" },
+        { roll: 107, name: "Ronit" },
+        { roll: 108, name: "Priya" },
+        { roll: 109, name: "Tulsi" },
+        { roll: 110, name: "Shreya" },
+      ];
+
+      document.write("<table class='table table-bordered w-100'");
+      document.write("<thead>");
+      document.write("<tr class='text-center'>");
+      document.write("<th class='w-25'>RollNo</th>");
+      document.write("<th class='w-25'>name:</th>");
+      document.write("<th class='w-25'>Present/Absent:</th>");
+      document.write("</tr>");
+      document.write("</thead>");
+
+      document.write("<tbody>");
+
+      for (i = 0; i < stuDetails.length; i++) {
+        document.write("<tr class='text-center'>");
+        document.write("<td>" + stuDetails[i].roll + "</td>");
+        document.write("<td>" + stuDetails[i].name + "</td>");
+        document.write("<td>");
+
+        document.write(
+          `<button class='me-2 btn btn-success' id="present-btn"  onclick = presentBtn(${stuDetails[i].roll})>Present</button><i class="bi bi-check bg-success text-white me-3 d-none" id="icon${stuDetails[i].roll}"></i><button class='me-2 btn btn-danger' id="absent-btn" onclick=absentBtn(${stuDetails[i].roll})>Absent</button><i class="fa-solid fa-xmark bg-danger fs-5 d-none" id="false${stuDetails[i].roll}"></i>`
+        );
+
+        document.write("</td>");
+        document.write("</tr>");
+      }
+
+      document.write("</tbody>");
+      document.write("</table>");
+
+      presentArr = [];
+
+      function presentBtn(roll) {
+        if (!presentArr.includes(roll)) {
+          presentArr.push(roll);
+        }
+
+        let index = absentArr.indexOf(roll);
+        if (index != -1) {
+          absentArr.splice(index, 1);
+        }
+        document.getElementById("icon" + roll).classList.remove("d-none");
+        document.getElementById("false" + roll).classList.add("d-none");
+      }
+
+      absentArr = [];
+
+      function absentBtn(roll) {
+        if (!absentArr.includes(roll)) {
+          absentArr.push(roll);
+          console.log(absentArr);
+        }
+
+        let index = presentArr.indexOf(roll);
+        if (index != -1) {
+          presentArr.splice(index, 1);
+        }
+        document.getElementById("false" + roll).classList.remove("d-none");
+        document.getElementById("icon" + roll).classList.add("d-none");
+      }
+
+      function allPresent() {
+        presentArr = [];
+        absentArr = [];
+        for (let i = 0; i < stuDetails.length; i++) {
+          presentArr.push(stuDetails[i].roll);
+        }
+
+        document.getElementById("icon").classList.remove("d-none");
+        document.getElementById("cancle").classList.add("d-none");
+      }
+
+      function allAbsent() {
+        absentArr = [];
+        presentArr = [];
+        for (let i = 0; i < stuDetails.length; i++) {
+          absentArr.push(stuDetails[i].roll);
+        }
+        document.getElementById("cancle").classList.remove("d-none");
+        document.getElementById("icon").classList.add("d-none");
+
+      }
+
+      function resetAttendance() {
+        presentArr = [];
+        absentArr = [];
+        document.getElementById("mypresentRes").innerHTML = "";
+        document.getElementById("myabsentRes").innerHTML = "";
+
+        document.getElementById("icon").classList.add("d-none");
+        document.getElementById("cancle").classList.add("d-none");
+
+      }
+
+      function saveAttendance() {
+        let presentList =
+          "Present : " +
+          (presentArr.length > 0 ? presentArr.join(", ") : "None");
+
+        let absentList =
+          "Absent : " + (absentArr.length > 0 ? absentArr.join(", ") : "None");
+
+        let presentRes = document.getElementById("mypresentRes");
+        presentRes.innerHTML = presentList;
+
+        let absentRes = document.getElementById("myabsentRes");
+        absentRes.innerHTML = absentList;
+
+        document.getElementById("icon").classList.add("d-none");
+        document.getElementById("cancle").classList.add("d-none");
+
+      }
+
+      function presentaALLIconSet(stuDetails){
+        for(i=0;i<stuDetails.length;i++){
+
+          document.getElementById(`icon${stuDetails[i].roll}`).classList.remove("d-none");
+          document.getElementById(`false${stuDetails[i].roll}`).classList.add("d-none");
+        }
+      }
+
+      function absentAllIconSet(stuDetails){
+        for(i=0;i<stuDetails.length;i++){
+
+           document.getElementById(`false${stuDetails[i].roll}`).classList.remove("d-none");
+           document.getElementById(`icon${stuDetails[i].roll}`).classList.add("d-none");
+        }
+      }
+
+      function removeAllIcon(stuDetails){
+
+        for(i=0;i<stuDetails.length;i++){
+
+         document.getElementById(`icon${stuDetails[i].roll}`).classList.add("d-none");
+         document.getElementById(`false${stuDetails[i].roll}`).classList.add("d-none");
+
+        }
+
+      }
+    </script>
+  </body>
+</html>
