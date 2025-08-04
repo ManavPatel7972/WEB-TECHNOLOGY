@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur placeat sint expedita consequatur quos laboriosam, temporibus, nesciunt architecto numquam fuga dolore, soluta maiores corrupti dolorum natus. Assumenda expedita iure doloribus.</h2>
+
+    <button id="b1">Fade In</button>
+    <button id="b2">Fade Out</button>
+    <button id="b3">Fade To</button>
+    <button id="b4">Fade Toggle</button>
+
+    <img src="https://tse1.mm.bing.net/th/id/OIP.jHvTOSF7924Ah63W7mozxQHaEo?rs=1&pid=ImgDetMain&o=7&rm=3">
+
+
+    <script>
+        $(document).ready(function(){
+
+            $("#b1").click(function(){
+                $("img").fadeIn();
+            });
+
+             $("#b2").click(function(){
+                $("img").fadeOut();
+            });
+
+             $("#b3").click(function(){
+                $("img").fadeTo();
+            });
+
+             $("#b4").click(function(){
+                $("img").fadeToggle();
+            });
+        })
+    </script>
+</body>
+</html>
