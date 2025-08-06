@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>on demo</title>
+  <style>
+  p {
+    margin: 0;
+    color: blue;
+  }
+  div,p {
+    margin-left: 10px;
+  }
+  span {
+    color: red;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+ 
+<p>Type 'correct' to validate.</p>
+<form action="javascript:alert( 'success!' );">
+  <div>
+    <input type="text" id="myTxt">
+    <input type="submit">
+  </div>
+</form>
+<span></span>
+ 
+<script>
+
+$('form').on("submit",function(e){
+  if($("input").first().val() === 'correct'){
+    $("span").text("Validatedd...").show();
+    $("#myTxt").val("");
+    return;
+  }
+  $("span").text("Not Valid!!").show().fadeOut(1000);
+  $("#myTxt").val("");
+  e.preventDefault();
+})
+</script>
+ 
+</body>
+</html>
