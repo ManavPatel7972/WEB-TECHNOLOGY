@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Demo</title>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+        <tr>
+          <td>id</td>
+          <td>name</td>
+          <td>image</td>
+        </tr>
+      </thead>
+
+      <tbody id="tbody"></tbody>
+    </table>
+    <script>
+      temp = "";
+      const xhttp = new XMLHttpRequest();
+      xhttp.open("get", "https://6881bc2266a7eb81224bb32e.mockapi.io/student", true);
+      xhttp.send();
+      xhttp.onload = function () {
+        if (xhttp.status == 200) {
+          data = JSON.parse(this.responseText);
+          data.map((std) => {
+            temp += `<tr>
+                               <td>${std.id}</td>
+                               <td>${std.name}</td>
+                               <td><img src = '${std.avatar}' height = '100px'></td>
+                               </tr>`;
+          });
+          tbody.innerHTML = temp;
+        } else {
+          alert("data not found");
+        }
+      };
+    </script>
+  </body>
+</html>
