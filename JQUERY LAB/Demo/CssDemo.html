@@ -1,0 +1,136 @@
+
+<!-- FIRST DEMO -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>css demo</title>
+  <style>
+  div {
+    height: 50px;
+    margin: 5px;
+    padding: 5px;
+    float: left;
+  }
+  #box1 {
+    width: 50px;
+    color: yellow;
+    background-color: blue;
+  }
+  #box2 {
+    width: 80px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(15, 99, 30);
+  }
+  #box3 {
+    width: 40px;
+    color: #fcc;
+    background-color: #123456;
+  }
+  #box4 {
+    width: 70px;
+    background-color: #f11;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+ 
+<p id="result">&nbsp;</p>
+<div id="box1">1</div>
+<div id="box2">2</div>
+<div id="box3">3</div>
+<div id="box4">4</div>
+ 
+<script>
+$( "div" ).on( "click", function() {
+  var html = [ "The clicked div has the following styles:" ];
+ 
+  var styleProps = $( this ).css([
+    "width", "height", "color", "background-color"
+  ]);
+  $.each( styleProps, function( prop, value ) {
+    html.push( prop + ": " + value );
+  });
+ 
+  $( "#result" ).html( html.join( "<br>" ) );
+});
+</script>
+ 
+</body>
+</html>
+
+
+
+
+
+
+<!-- SECOND DEMO -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>css demo</title>
+  <style>
+  div {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    float: left;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+ 
+<span id="result">&nbsp;</span>
+<div style="background-color:blue;"></div>
+<div style="background-color:rgb(15,99,30);"></div>
+<div style="background-color:#123456;"></div>
+<div style="background-color:#f11;"></div>
+ 
+<script>
+$( "div" ).on( "click", function() {
+  var color = $( this ).css( "background-color" );
+  $( "#result" ).html( "That div is <span style='color:" +
+    color + ";'>" + color + "</span>." );
+});
+</script>
+ 
+</body>
+</html>
+
+
+
+
+<!-- THIRD DEMO -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>css demo</title>
+  <style>
+  #box {
+    background: black;
+    color: snow;
+    width: 100px;
+    padding: 10px;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+ 
+<div id="box">Click me to grow</div>
+ 
+<script>
+$( "#box" ).one( "click", function() {
+  $( this ).css( "width", "+=200" );
+});
+</script>
+ 
+</body>
+</html
