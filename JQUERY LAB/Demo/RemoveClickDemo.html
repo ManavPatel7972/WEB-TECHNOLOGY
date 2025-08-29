@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <h2>How Are You ???</h2>
+
+    <p id="myPera">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias,
+      corporis.
+    </p>
+
+    <ul id="myList">
+      <li>one</li>
+      <li>two</li>
+      <li>three</li>
+    </ul>
+
+    <script>
+      $(document).ready(function () {
+        $("#myPera").css({ backgroundColor: "red" });
+        $("#myPera").click(function () {
+          $(this).hide();
+        });
+        $("body *").click(function(){
+            $(this).hide();
+        });
+      });
+    </script>
+  </body>
+</html>
