@@ -1,0 +1,38 @@
+.table{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 100px;
+      }
+      table{
+        border: 1px solid black;
+      }
+
+       td{
+        padding: 10px;
+        border: 1px solid black;
+      }
+      button{
+        width: 2rem;
+        height: 2rem;
+        background-color: black;
+        color: white;
+    
+      }
+      #equal{
+        background-color: orangered;
+        color: black;
+        border-color: black;
+        font-size: x-large;
+        border: 1px solid black;
+      }
+      td{
+        font-size: x-large;
+      }
+      #mytext{
+        width: 200px;
+        height: 50px;
+        background-color: black;
+        color: white;
+        font-size:x-large;
+      }
