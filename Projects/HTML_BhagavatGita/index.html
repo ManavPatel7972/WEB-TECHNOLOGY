@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bhagavad Gita</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <style>
+      /* *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      } */
+
+      body {
+        color: #111827;
+        background: #ffffff;
+        /* color: #fff;
+        background-color: #222; */
+      }
+      .navbar {
+        border-bottom: 1px solid #e5e7eb;
+        background: #fff;
+        text-wrap: nowrap;
+        font-size: 18px;
+        height: 90px;
+      }
+      .chapter-icon {
+        color: #e36f00;
+        font-size: 18px;
+      }
+      .chapter:hover {
+        background-color: #fff6ee;
+      }
+      .logo {
+        font-size: 1.7rem;
+      }
+      .search {
+        /* font-size: 11px; */
+        font-weight: 100;
+        width: 9rem;
+        font-size: 15px;
+      }
+      .search:focus {
+        border: none !important;
+      }
+
+      .brand {
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+      .hero {
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      }
+      .hero img {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+      }
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.25),
+          rgba(0, 0, 0, 0.5)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+      }
+      .hero-text {
+        color: #fedf89;
+      }
+
+      .btn-brand {
+        background: #f4f2f1;
+        /* border-color: #ff7a00; */
+        background-color: #e36f00;
+        color: white;
+      }
+      .btn-brand:hover {
+        color: white;
+        background: #e57b17e6;
+        border-color: #e36f00;
+      }
+      .daily-card {
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+      }
+      .signup {
+        background: #fff6ee;
+        border-radius: 0;
+        border-top: 1px solid #e5e7eb;
+        border-bottom: 1px solid #e5e7eb;
+        background-image: url("https://bhagavadgita.io/_next/image?url=%2Fnewsbg.png&w=1920&q=75");
+      }
+
+      .card-artical:hover {
+        border: 2px solid #f8ca84cb;
+        background-color: #f4f2f1;
+      }
+
+      .chapter-card {
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        background: #ffffff;
+        transition: transform 0.12s ease, box-shadow 0.12s ease;
+      }
+      .chapter-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      }
+      .chapter-meta {
+        color: #6b7280;
+        font-size: 0.85rem;
+      }
+      footer {
+        border-top: 1px solid #e5e7eb;
+        background: #eeebeb;
+      }
+      .footer-link {
+        color: #6b7280;
+        text-decoration: none;
+      }
+      .footer-link:hover {
+        color: #111827;
+      }
+      .toggle-div {
+        /* background-color: #111827; */
+        border-radius: 2px;
+      }
+      .toggle-icon {
+        margin-left: 2px;
+        font-size: 20px;
+      }
+      .lan-div {
+        border-radius: 2px;
+      }
+      .lan-icon {
+        margin-left: 2px;
+        font-size: 20px;
+      }
+      .chp:hover {
+        background-color: rgb(240, 237, 237);
+      }
+
+      /* for Toggle Icon And Language Icon */
+      @media screen and (max-width: 992px) {
+        .toggle-div {
+          display: none;
+        }
+        .lan-div {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: 770px) {
+        .myform {
+          display: flex;
+          flex-direction: column;
+          height: 240px;
+        }
+        .mybtn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <a class="navbar-brand brand logo" href="index.html">Bhagavad Gita</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMain"
+          aria-controls="navMain"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto gap-4 fw-medium">
+            <div class="dropdown">
+              <button
+                class="btn nav-link dropdown-toggle fw-medium"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Chapters
+              </button>
+
+              <ul class="dropdown-menu">
+                <li class="d-flex chapter">
+                  <a class="dropdown-item chp" href="#">
+                    <i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-1</a
+                  >
+                  <a class="dropdown-item chp" href="#"
+                    ><i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-2</a
+                  >
+                </li>
+                <li class="d-flex chapter">
+                  <a class="dropdown-item chp" href="#"
+                    ><i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-3</a
+                  >
+                  <a class="dropdown-item chp" href="#"
+                    ><i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-4</a
+                  >
+                </li>
+                <li class="d-flex chapter">
+                  <a class="dropdown-item chp" href="#"
+                    ><i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-5</a
+                  >
+                  <a class="dropdown-item chp" href="#"
+                    ><i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-6</a
+                  >
+                </li>
+                <li class="d-flex chapter">
+                  <a class="dropdown-item chp" href="#"
+                    ><i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-7</a
+                  >
+                  <a class="dropdown-item chp" href="#"
+                    ><i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-8</a
+                  >
+                </li>
+                <li class="d-flex chapter">
+                  <a class="dropdown-item chp" href="#"
+                    ><i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-9</a
+                  >
+                  <a class="dropdown-item chp" href="#"
+                    ><i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-10</a
+                  >
+                </li>
+                <li class="d-flex chapter">
+                  <a class="dropdown-item chp" href="#"
+                    ><i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-11</a
+                  >
+                  <a class="dropdown-item chp" href="#"
+                    ><i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-12</a
+                  >
+                </li>
+                <li class="d-flex chapter">
+                  <a class="dropdown-item chp" href="#"
+                    ><i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-13</a
+                  >
+                  <a class="dropdown-item chp" href="#"
+                    ><i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-14</a
+                  >
+                </li>
+                <li class="d-flex chapter">
+                  <a class="dropdown-item chp" href="#"
+                    ><i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-15</a
+                  >
+                  <a class="dropdown-item chp" href="#"
+                    ><i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-16</a
+                  >
+                </li>
+                <li class="d-flex chapter">
+                  <a class="dropdown-item chp" href="#"
+                    ><i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-17</a
+                  >
+                  <a class="dropdown-item chp" href="#"
+                    ><i class="chapter-icon bi-file-bar-graph me-2"></i
+                    >Chapter-18</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="chapters.html">Chapters</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="qoutes.html">Quotes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Gita</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gita_ai.html">Gita AI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="donate.html">Donate</a>
+            </li>
+          </ul>
+          <form
+            class="d-flex gap-2 ms-auto"
+            role="search"
+            aria-label="Site search"
+          >
+            <input
+              class="search p-2 border-1 border-secondary border-opacity-50 rounded-1"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-sm btn-outline-secondary" type="submit">
+              Search
+            </button>
+          </form>
+          <div class="ms-3 toggle-div p-1">
+            <i class="toggle-icon fa-solid fa-moon text-dark"></i>
+          </div>
+          <div class="ms-1 p-1 lan-div">
+            <i class="lan-icon fa-solid fa-globe"></i>
+            <select name="" id="lan" class="border-0">
+              <option selected value="India">India</option>
+              <option value="">Aus</option>
+              <option value="">Us</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- main section -->
+    <main class="container py-4 py-md-5">
+      <!-- hero-section -->
+      <section class="hero mb-4 mb-md-5">
+        <img
+          src="https://bhagavadgita.io/_next/image?url=%2Fbanner2.png&w=1920&q=75"
+          alt="Epic scene from the Mahabharata"
+        />
+        <div class="hero-overlay px-3">
+          <div>
+            <h1 class="h1 fw-bold text-balance fs-1">Experience the Gita</h1>
+            <h1 class="h1 fw-bold text-balance hero-text fs-1">
+              Anywhere, Anytime
+            </h1>
+            <p class="lead">
+              Read chapters with translations, transliteration, and
+              commentaries.
+            </p>
+            <a class="btn btn-brand btn-lg px-4" href="chapters.html"
+              >Read now</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- daily-card -->
+      <section class="mb-5">
+        <div class="daily-card p-3 p-md-4 shadow">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h6 class="text-uppercase fw-semibold" style="color: #f97316">
+              Verse of the day · BG 6.13
+            </h6>
+          </div>
+          <p class="mb-3 fs-5 text-secondary">
+            Let him firmly hold his body, head, and neck erect and still, gazing
+            at the tip of his nose without looking around.
+          </p>
+          <a
+            class="text-decoration-none text-uppercase text-black fw-bold"
+            href="verse-6-13.html"
+            >See more</a
+          >
+        </div>
+      </section>
+
+      <!-- signup section -->
+      <section class="signup py-4 py-md-5 mb-4 mb-md-5 shadow">
+        <div class="container">
+          <div class="text-center mb-3">
+            <h2 class="h2 fw-bold mb-1 text-wrap mt-1">
+              Have the Shloka of the Day delivered to your
+              <br />
+              inbox each morning
+            </h2>
+          </div>
+          <form class="myform row g-2 justify-content-center mt-4">
+            <div class="col-12 col-md-3">
+              <label class="visually-hidden" for="name">Your name</label>
+              <input
+                id="name"
+                class="form-control p-3 text-secondary fs-5"
+                placeholder="Enter Your Name"
+              />
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="visually-hidden" for="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                class="form-control p-3 text-secondary fs-5"
+                placeholder="Enter Your Email"
+              />
+            </div>
+            <div class="col-12 col-md-auto">
+              <button class="mybtn btn btn-brand px-4 p-3" type="submit">
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- card-section -->
+      <section class="mb-5">
+        <h2 class="h4 fw-bold fs-2 mb-5 mt-3">Chapters</h2>
+        <div class="row g-3 g-md-4">
+          <!-- Repeat this card for all 18 chapters -->
+          <div class="col-12 col-md-6">
+            <a
+              class="d-block text-decoration-none text-reset"
+              href="chapter-1.html"
+            >
+              <article
+                class="card-artical d-flex flex-column justify-content-center align-items-start chapter-card p-3 p-md-4 h-100"
+              >
+                <p
+                  class="text-capitalize fw-bolder fs-5 mb-1"
+                  style="color: #ee7503"
+                >
+                  Chapter 1
+                </p>
+                <h3 class="h5 fw-bold">Arjuna Vishada Yoga</h3>
+                <p class="mb-0 chapter-meta fs-6">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui
+                  libero ratione velit maxime consectetur odit sequi hic
+                  debitis, blanditiis aperiam quidem magnam molestiae ea odio
+                  tenetur. Fuga magni magnam nihil?
+                </p>
+                <p class="mt-3 mb-0"><i class="me-3 small">icon</i>47 verses</p>
+              </article>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <a
+              class="d-block text-decoration-none text-reset"
+              href="chapter-1.html"
+            >
+              <article
+                class="card-artical d-flex flex-column justify-content-center align-items-start chapter-card p-3 p-md-4 h-100"
+              >
+                <p
+                  class="text-capitalize fw-bolder fs-5 mb-1"
+                  style="color: #ee7503"
+                >
+                  Chapter 1
+                </p>
+                <h3 class="h5 fw-bold">Arjuna Vishada Yoga</h3>
+                <p class="mb-0 chapter-meta fs-6">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui
+                  libero ratione velit maxime consectetur odit sequi hic
+                  debitis, blanditiis aperiam quidem magnam molestiae ea odio
+                  tenetur. Fuga magni magnam nihil?
+                </p>
+                <p class="mt-3 mb-0"><i class="me-3 small">icon</i>47 verses</p>
+              </article>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <a
+              class="d-block text-decoration-none text-reset"
+              href="chapter-1.html"
+            >
+              <article
+                class="card-artical d-flex flex-column justify-content-center align-items-start chapter-card p-3 p-md-4 h-100"
+              >
+                <p
+                  class="text-capitalize fw-bolder fs-5 mb-1"
+                  style="color: #ee7503"
+                >
+                  Chapter 1
+                </p>
+                <h3 class="h5 fw-bold">Arjuna Vishada Yoga</h3>
+                <p class="mb-0 chapter-meta fs-6">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui
+                  libero ratione velit maxime consectetur odit sequi hic
+                  debitis, blanditiis aperiam quidem magnam molestiae ea odio
+                  tenetur. Fuga magni magnam nihil?
+                </p>
+                <p class="mt-3 mb-0"><i class="me-3 small">icon</i>47 verses</p>
+              </article>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <a
+              class="d-block text-decoration-none text-reset"
+              href="chapter-1.html"
+            >
+              <article
+                class="card-artical d-flex flex-column justify-content-center align-items-start chapter-card p-3 p-md-4 h-100"
+              >
+                <p
+                  class="text-capitalize fw-bolder fs-5 mb-1"
+                  style="color: #ee7503"
+                >
+                  Chapter 1
+                </p>
+                <h3 class="h5 fw-bold">Arjuna Vishada Yoga</h3>
+                <p class="mb-0 chapter-meta fs-6">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui
+                  libero ratione velit maxime consectetur odit sequi hic
+                  debitis, blanditiis aperiam quidem magnam molestiae ea odio
+                  tenetur. Fuga magni magnam nihil?
+                </p>
+                <p class="mt-3 mb-0"><i class="me-3 small">icon</i>47 verses</p>
+              </article>
+            </a>
+          </div>
+
+          <!-- Add remaining chapters 3-18 similarly -->
+        </div>
+      </section>
+    </main>
+
+    <!-- footer section -->
+    <footer class="py-4">
+      <div class="container">
+        <div class="row g-3 g-md-4 align-items-center">
+          <div class="col gap-4">
+            <div class="d-flex justify-content-evenly flex-wrap">
+              <a class="footer-link" href="about.html">About Us</a>
+              <a class="footer-link" href="gita_ai.html">Bhagavad Gita AI</a>
+              <a class="footer-link" href="" target="_blank" rel="noopener"
+                >App</a
+              >
+              <a class="footer-link" href="acknowledgements.html"
+                >Acknowledgements</a
+              >
+              <a class="footer-link" href="privacy.html">Privacy</a>
+              <a class="footer-link" href="terms.html">Terms</a>
+              <a class="footer-link" href="blog.html">Blog</a>
+              <a class="footer-link" href="donate.html">Donate</a>
+              <a class="footer-link" href="api.html">API</a>
+              <a class="footer-link" href="contact.html">Contact Us</a>
+            </div>
+          </div>
+        </div>
+        <div class="row d-lex justify-content-center mt-4 text-center">
+          <div class="col-12 d-flex justify-content-center gap-4 fs-4">
+            <a href="https://github.com/" class="text-black"
+              ><i class="col fa-brands fa-github"></i
+            ></a>
+            <a href="https://www.facebook.com/" class="">
+              <i class="col fa-brands fa-facebook"></i
+            ></a>
+            <a href="http://www.instagram.com/" class="text-danger"
+              ><i class="col fa-brands fa-instagram"></i
+            ></a>
+            <a href="https://www.bing.com/" class="text-black"
+              ><i class="col fa-brands fa-x-twitter"></i
+            ></a>
+          </div>
+        </div>
+        <div class="row d-5lex justify-content-center mt-4">
+          <div class="col-12 col-md-auto">
+            <small class="text-muted"
+              >© Bhagavad Gita:
+              <a href="" class="text-decoration-none link-underline"
+                >Ved Vyas Foundation.
+              </a>
+              All Rights Reserved</small
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
