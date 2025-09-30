@@ -40,7 +40,7 @@ export const ReducerComp = () => {
   //   const [count, setCount] = useState(0);
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <div className=" p-4 h-lvh flex flex-col justify-center items-center ">
+    <div className="">
       <h1>{state.count}</h1>
       <button onClick={() => dispatch({ type: "INCREMENT" })}>Increment</button>
       <button onClick={() => dispatch({ type: "DECREMENT" })}>Decrement</button>

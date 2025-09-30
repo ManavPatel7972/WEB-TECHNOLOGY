@@ -1,6 +1,10 @@
 import { useId } from "react";
 
 export const UseId = () => {
+
+
+// if only one or two input field so this way using two different useId() is used!
+   
   //   const usernameId = useId();
   //   const emailId = useId();
   //   const passwordId = useId();
@@ -23,8 +27,13 @@ export const UseId = () => {
   //     </form>
   //   );
 
+  
+  
+
   //   This lets you avoid calling useId for every single element that needs a unique ID.
 
+
+  // If more than one input field so this way is better 
   const id = useId();
 
   return (

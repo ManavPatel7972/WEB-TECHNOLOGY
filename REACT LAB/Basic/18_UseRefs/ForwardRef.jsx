@@ -1,6 +1,8 @@
 import { forwardRef, useId, useRef } from "react";
 
 export const ForwardRefs = () => {
+
+  // const variable = useRef(Initial Value);
   const username = useRef(null);
   const password = useRef(null);
 
@@ -19,7 +21,7 @@ export const ForwardRefs = () => {
 };
 
 // I need to create BeforeReact19Input
-// eslint-disable-next-line react/display-name
+
 // const BeforeReact19Input = forwardRef((props, ref) => {
 //   const id = useId();
 //   return (
@@ -30,7 +32,8 @@ export const ForwardRefs = () => {
 //   );
 // });
 
-// afterReactv19
+
+// Using Destructuring Label and Ref
 const BeforeReact19Input = ({ label, ref }) => {
   const id = useId();
   return (
