@@ -1,0 +1,164 @@
+body {
+  color: #111827;
+  background: #ffffff;
+  /* color: #fff;
+        background-color: #222; */
+}
+.navbar {
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+  text-wrap: nowrap;
+  font-size: 18px;
+  height: 90px;
+}
+.chapter-icon {
+  color: #e36f00;
+  font-size: 18px;
+}
+.chapter:hover {
+  background-color: #fff6ee;
+}
+.logo {
+  font-size: 1.7rem;
+}
+.search {
+  /* font-size: 11px; */
+  font-weight: 100;
+  width: 9rem;
+  font-size: 15px;
+}
+.search:focus{
+  border: none;
+}
+.search:focus {
+  border: none !important;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: black;
+}
+.hero {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.hero img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.hero-text {
+  color: #fedf89;
+}
+
+.btn-brand {
+  background: #f4f2f1;
+  /* border-color: #ff7a00; */
+  background-color: #e36f00;
+  color: white;
+}
+.btn-brand:hover {
+  color: white;
+  background: #e57b17e6;
+  border-color: #e36f00;
+}
+.daily-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+.signup {
+  background: #fff6ee;
+  border-radius: 0;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  background-image: url("https://bhagavadgita.io/_next/image?url=%2Fnewsbg.png&w=1920&q=75");
+}
+
+.card-artical:hover {
+  border: 1px solid #f8ca84cb;
+  background-color: #f4f2f1;
+}
+
+.chapter-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  /* transition: transform 0.12s ease, box-shadow 0.12s ease; */
+}
+.chapter-card:hover {
+  /* transform: translateY(-2px); */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+.chapter-meta {
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+footer {
+  border-top: 1px solid #e5e7eb;
+  background: #eeebeb;
+}
+.footer-link {
+  color: #6b7280;
+  text-decoration: none;
+}
+.footer-link:hover {
+  color: #111827;
+}
+.toggle-div {
+  /* background-color: #111827; */
+  border-radius: 2px;
+}
+.toggle-icon {
+  margin-left: 2px;
+  font-size: 20px;
+}
+.lan-div {
+  border-radius: 2px;
+}
+.lan-icon {
+  margin-left: 2px;
+  font-size: 20px;
+}
+.chp:hover {
+  background-color: rgb(240, 237, 237);
+}
+.truncate-height {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 70px;
+  line-height: 1.5em;
+}
+
+/* for Toggle Icon And Language Icon */
+@media screen and (max-width: 992px) {
+  .toggle-div {
+    display: none;
+  }
+  .lan-div {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .myform {
+    display: flex;
+    flex-direction: column;
+    height: 240px;
+  }
+  .mybtn {
+    width: 100%;
+  }
+}

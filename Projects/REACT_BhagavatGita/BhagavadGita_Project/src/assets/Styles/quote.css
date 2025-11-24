@@ -1,0 +1,40 @@
+.my-img-div {
+  width: 100%;
+  position: relative;
+}
+.my-image {
+  object-fit: cover;
+  width: 60%;
+  height: 350px;
+  opacity: 2;
+  border: none;
+}
+.myh1 {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  color: white;
+  font-weight: 900;
+  text-wrap: wrap;
+  text-align: center;
+}
+.main-div {
+  width: 100%;
+}
+.my-content {
+  width: 60%;
+  margin: 0px auto;
+  margin-top: 90px !important;
+}
+.my-content p {
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  font-weight: 400;
+  color: black;
+}
+.my-content h5 {
+  color: #e36f00;
+}
